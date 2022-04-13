@@ -1,0 +1,132 @@
+package com.company;
+
+public class Quadrilateral extends Shapes{
+
+    private double angle_A;
+    private double angle_B;
+    private double angle_C;
+    private double angle_D;
+
+    public Quadrilateral(double width, double height) {
+        super(width, height);
+    }
+
+    public double getAngle_A() {
+        return angle_A;
+    }
+
+    public void setAngle_A(double angle_A) {
+        this.angle_A = angle_A;
+    }
+
+    public double getAngle_B() {
+        return angle_B;
+    }
+
+    public void setAngle_B(double angle_B) {
+        this.angle_B = angle_B;
+    }
+
+    public double getAngle_C() {
+        return angle_C;
+    }
+
+    public void setAngle_C(double angle_C) {
+        this.angle_C = angle_C;
+    }
+
+    public double getAngle_D() {
+        return angle_D;
+    }
+
+    public void setAngle_D(double angle_D) {
+        this.angle_D = angle_D;
+    }
+
+    public double Calculate_Area() {
+        return this.getHeight() * this.getWidth();
+    }
+
+    public void Detect_Type_Of_Quadrilateral() {
+        if (this.getHeight() == this.getWidth() && this.getAngle_A()==90 && this.getAngle_B()==90
+        && this.getAngle_C()==90 && this.getAngle_D()==90) {
+            System.out.println("SQUARE");
+        }
+        else if (this.getHeight() == this.getWidth() && this.getAngle_A() == this.getAngle_C()
+        && this.getAngle_B() == this.getAngle_D()) {
+            System.out.println("PARALLELOGRAM");
+        }
+        else if (this.getHeight() != this.getWidth() && this.getAngle_A()==90 && this.getAngle_B()==90
+        && this.getAngle_C()==90 && this.getAngle_D()==90) {
+            System.out.println("RECTANGLE");
+        }
+        else {
+            System.out.println("Invalid shape");
+        }
+    }
+}
+
+
+
+
+
+************************************************88
+
+shapes
+
+
+package com.company;
+
+public class Shapes {
+    private double height;
+    private double width;
+    private double area;
+
+    public Shapes(double width, double height) {
+        this.width = width;
+        this.height = height;
+    }
+
+    public double getHeight() {
+        return height;
+    }
+
+    public void setHeight(double height) {
+        this.height = height;
+    }
+
+    public double getWidth() {
+        return width;
+    }
+
+    public void setWidth(double width) {
+        this.width = width;
+    }
+
+    public double getArea() {
+        return area;
+    }
+
+    public void setArea(double area) {
+        this.area = area;
+    }
+
+
+}
+********************************************88
+main
+
+
+package com.company;
+
+public class Main {
+
+    public static void main(String[] args) {
+        Quadrilateral q = new Quadrilateral(3.5, 3.5);
+        q.setAngle_A(80);
+        q.setAngle_B(100);
+        q.setAngle_C(78);
+        q.setAngle_D(100);
+        q.Detect_Type_Of_Quadrilateral();
+    }
+}
